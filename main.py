@@ -1,5 +1,15 @@
 import cv2
 import datetime
+import argparse
+
+
+def initialise_args():
+    parser = argparse.ArgumentParser(description='Get flag values')
+    parser.add_argument('-p', '--path', required=True, help='Path to the video file')
+    args = parser.parse_args()
+    video_file = args.path
+    return video_file
+
 
 def get_video_duration(filename):
     video = cv2.VideoCapture(filename)
@@ -9,6 +19,7 @@ def get_video_duration(filename):
     video_time = datetime.timedelta(seconds=seconds)
     return video_time
 
-# Example usage
-video_duration = get_video_duration("/home/spear/Desktop/sample.mp4")
-print(f"Video Duration: {video_duration}")
+
+if __name__ == '__main__':
+    video_duration = get_video_duration(initialise_args())
+    print(f"Video Duration: {video_duration}")
