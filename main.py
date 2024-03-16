@@ -21,8 +21,8 @@ def get_total_video_duration(filename):
         seconds = frame_count / fps
     except:
         return datetime.timedelta(seconds=0)
-    video_time = datetime.timedelta(seconds=seconds)
-    return video_time
+    return datetime.timedelta(seconds=seconds)
+
 
 def iterate_directories(directory):
     total_duration = datetime.timedelta(seconds=0)
@@ -32,9 +32,10 @@ def iterate_directories(directory):
         print(f"Files: {files}")
         for each_file in files:
             print(f"Processing File: {each_file}")
-            total_duration += get_total_video_duration(root + "/" + each_file)
+            total_duration += get_total_video_duration(os.path.join(root, each_file))
         print("\n")
     return total_duration
+
 
 if __name__ == '__main__':
     total_duration = iterate_directories(initialise_args())
