@@ -1,10 +1,10 @@
 # Multiple-Video-Duration
-Finds total play time of all videos present in directories and its sub directories.
+Wondering how much time its gonna take to complete a course you downloaded ? Use this code to get total playback time of all video files scattered in different folders across your system.
 
 ## Usage
 ```python
 from multiple_video_files_duration import duration
 
-duration.start('/directory-path-containing-all-videos-and-sub-dirs')
+duration.start('/root-directory-of-the-course-containing-videos-and-videos-in-sub-dirs')
 ```
 
