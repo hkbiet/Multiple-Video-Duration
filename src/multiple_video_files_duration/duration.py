@@ -45,8 +45,11 @@ def initialise_args():
     return args.path
 
 
-if __name__ == '__main__':
+def start():
     directory = initialise_args()
     directory_iterator = DirectoryIterator(directory)
     total_duration = directory_iterator.iterate()
     print(f"Total Video Duration: {total_duration}")
+
+if __name__ == '__main__':
+    start()
